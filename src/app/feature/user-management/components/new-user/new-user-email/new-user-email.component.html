@@ -1,0 +1,26 @@
+<div class="w-2/5 flex flex-col pt-16">
+  <h1 class="text-xl text-center pb-16">Submit new user's email address.</h1>
+  <p-card>
+    <p>Submit new user work email address. This email address must be a domain email address, identical to your company website domain.</p><br>
+    <p>example@companydomain.com</p><br>
+    <p>The new user will receive a verification email which will also notify them that they have access to venvu after their admin has generated their profile.</p><br>
+    <form [formGroup]="newUserEmailForm" class="pt-4">
+      <div>
+        <span class="p-float-label">
+          <input id="email-input" type="email" pInputText formControlName="email_address" />
+          <label for="email-input">Email Address</label>
+          <span *ngIf="f.email_address.errors?.pattern">{{ inputValidators.email.errorMessage }}</span>
+        </span>
+      </div>
+    </form>
+    <div class="pt-6">
+      <button
+        pButton
+        type="button"
+        (click)="next()"
+        label="Continue"
+        [disabled]="!newUserEmailForm.valid">
+      </button>
+    </div>
+  </p-card>
+</div>

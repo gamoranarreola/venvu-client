@@ -1,0 +1,41 @@
+<div class="w-4/5 flex flex-col pt-16">
+  <h1 class="text-xl text-center pb-16">Choose the account type for your company</h1>
+  <div class="grid grid-cols-2 gap-10 pb-16">
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1 class="text-center font-bold">Consumer Account</h1>
+      </ng-template>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at auctor ligula. Sed nec est dolor. Suspendisse quam diam, sodales id nisl in, mattis hendrerit..</p>
+      <ng-template pTemplate="footer">
+        <button
+          pButton
+          type="button"
+          label="Select"
+          (click)="setAccountType('_CNS')">
+        </button>
+      </ng-template>
+    </p-card>
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1 class="text-center font-bold">Vendor Account</h1>
+      </ng-template>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at auctor ligula. Sed nec est dolor. Suspendisse quam diam, sodales id nisl in, mattis hendrerit..</p>
+      <ng-template pTemplate="footer">
+        <button
+          pButton
+          type="button"
+          label="Select"
+          (click)="setAccountType('_VND')">
+        </button>
+      </ng-template>
+    </p-card>
+  </div>
+  <button
+    class="self-center"
+    pButton
+    type="button"
+    label="Proceed as {{ accountSetup.account_type === '_VND' ? 'Vendor' : 'Consumer' }} Account"
+    (click)="next()"
+    *ngIf="accountSetup.account_type !== ''"
+  ></button>
+</div>

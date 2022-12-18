@@ -1,0 +1,12 @@
+<span class="p-float-label">
+  <p-chips
+    [formControl]="formControl"
+    id="key-chips-input"
+    separator=","
+    (onAdd)="addItem($event)"
+    [disabled]="isReadOnly"
+  ></p-chips>
+  <ng-container *ngIf="!isReadOnly">
+    <label for="key-chips-input">{{ keyType }}</label>
+  </ng-container>
+</span>

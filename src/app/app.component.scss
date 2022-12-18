@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.main-content-wrapper {
+  margin-top: 60px;
+  height: 100%;
+  padding-bottom: 20px;
+  background-color: #fafafa;
+}
+
+p-progressspinner {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0);
+}

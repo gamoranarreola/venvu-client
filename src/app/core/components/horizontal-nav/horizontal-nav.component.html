@@ -1,0 +1,19 @@
+<div class="horizontal-nav">
+  <p-toolbar>
+    <div class="p-toolbar-group-left">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <a [routerLink]="'f/dashboard'">
+            <img src="../../../../assets/logos/venvu_logo_with_icon_FINAL.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <vvu-rep-menu *ngIf="account?.account_type !== null && auth0UserProfile?.isRep()"></vvu-rep-menu>
+    </div>
+    <div class="p-toolbar-group-right">
+      <vvu-account-menu class="my-class"></vvu-account-menu>
+    </div>
+  </p-toolbar>
+</div>

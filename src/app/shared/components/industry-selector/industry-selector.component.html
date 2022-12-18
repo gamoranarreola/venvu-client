@@ -1,0 +1,9 @@
+<span class="p-float-label">
+  <p-dropdown
+    [options]="industries"
+    optionLabel="name"
+    optionValue="id"
+    placeholder="Industry"
+    [(ngModel)]="selected"
+    (onChange)="selectIndustry()"></p-dropdown>
+</span>

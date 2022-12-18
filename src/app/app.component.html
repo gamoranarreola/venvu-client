@@ -1,0 +1,13 @@
+<p-toast position="bottom-center"></p-toast>
+<p-progressSpinner [hidden]="!showSpinner"></p-progressSpinner>
+<vvu-horizontal-nav></vvu-horizontal-nav>
+<div class="main-content-wrapper">
+  <div class="flex grid-cols grid-flow-col auto-cols-max w-full">
+    <div>
+      <vvu-vertical-nav></vvu-vertical-nav>
+    </div>
+    <div class="w-full pt-10 px-20">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

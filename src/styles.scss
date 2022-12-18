@@ -1,0 +1,72 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body, html {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Company Profile components */
+
+.p-inputtext,
+.p-dropdown {
+  width: 100%;
+}
+
+.p-chips {
+  width: 100%;
+}
+
+/* Vertical navigation */
+
+.p-sidebar-left {
+  width: 16rem !important;
+}
+
+.p-sidebar,
+.p-button {
+  background-color: #0030b7;
+}
+
+.p-panelmenu-icon {
+  order: 1; // Chevron icon to be the first item on right side.
+}
+
+.p-menuitem-text {
+  flex-grow: 1; // Fill the whole space and push the Chevron icon to the end.
+}
+
+.p-toolbar {
+  padding: .5rem;
+}
+
+.p-menubar {
+  padding: 0;
+}
+
+.p-toolbar.p-component {
+  background-color: white;
+}
+
+.p-card {
+  @apply p-4;
+
+  .p-card-footer {
+    @apply flex justify-center;
+  }
+}
+
+vvu-account-menu {
+  ul {
+    .p-submenu-list {
+      right: 0%;
+    }
+  }
+}

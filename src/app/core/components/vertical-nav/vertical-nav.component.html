@@ -1,0 +1,22 @@
+<p-sidebar
+  [visible]="true"
+  [baseZIndex]="10000"
+  [dismissible]="false"
+  [showCloseIcon]="false"
+  [modal]="false"
+  [style]="{'margin-top': '60px'}">
+  <ng-container *ngIf="navConfig && navConfig.adminMenu">
+    <h4>{{ navConfig.adminMenu.menuHeader }}</h4>
+    <p-panelMenu
+      [model]="navConfig.adminMenu.menuItems"
+      [style]="{'width': '100%'}">
+    </p-panelMenu>
+  </ng-container>
+  <ng-container *ngIf="navConfig && navConfig.publisherMenu">
+    <h4>{{ navConfig.publisherMenu.menuHeader }}</h4>
+    <p-panelMenu
+      [model]="navConfig.publisherMenu.menuItems"
+      [style]="{'width': '100%'}">
+    </p-panelMenu>
+  </ng-container>
+</p-sidebar>

@@ -1,0 +1,9 @@
+<span class="p-float-label">
+  <p-dropdown
+    [options]="employeeCountranges"
+    optionLabel="name"
+    optionValue="code"
+    placeholder="Employees"
+    [(ngModel)]="selected"
+    (onChange)="selectEmployeeCountRange()"></p-dropdown>
+</span>

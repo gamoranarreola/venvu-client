@@ -1,0 +1,18 @@
+:host {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+}
+
+.horizontal-nav {
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+
+  img {
+    width: 136px; // previously 218px 40px
+    height: 25px;
+  }
+}

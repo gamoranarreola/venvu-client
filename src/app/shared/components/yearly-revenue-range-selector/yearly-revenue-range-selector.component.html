@@ -1,0 +1,9 @@
+<span class="p-float-label">
+  <p-dropdown
+    [options]="yearlyRevenueRanges"
+    optionLabel="name"
+    optionValue="code"
+    placeholder="Annual Revenue"
+    [(ngModel)]="selected"
+    (onChange)="selectYearlyRevenueRange()"></p-dropdown>
+</span>

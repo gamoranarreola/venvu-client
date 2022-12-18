@@ -1,0 +1,130 @@
+<h1 class="text-center text-2xl pb-4">Company Profile Form</h1>
+<p class="text-center text-base pb-20">Complete your company profile and activate it. Your company profile can be seen by all users
+  of venvu.</p>
+<div>
+  <form *ngIf="account" [formGroup]="companyProfileForm" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-2 gap-10 pb-20">
+      <!-- COL 1 -->
+      <div>
+        <!-- PRIMARY DETAILS -->
+        <h2 class="text-base font-bold pb-8">Primary Details</h2>
+        <div class="grid grid-rows-8 gap-8">
+          <div>
+            <span class="p-float-label">
+              <input id="name-input" type="text" pInputText formControlName="name" />
+              <label for="name-input">Name</label>
+              <span class="text-xs text-red-500" *ngIf="f.name.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="parent-company-input" type="text" pInputText formControlName="parent_company" />
+              <label for="parent-company-input">Parent Company</label>
+              <span class="text-xs text-red-500" *ngIf="f.parent_company.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+            </span>
+          </div>
+          <div>
+            <vvu-industry-selector formControlName="industry"></vvu-industry-selector>
+          </div>
+          <div>
+            <vvu-employee-count-range-selector formControlName="employee_count_range"></vvu-employee-count-range-selector>
+          </div>
+          <div>
+            <vvu-yearly-revenue-range-selector formControlName="yearly_revenue_range"></vvu-yearly-revenue-range-selector>
+          </div>
+          <div>
+            <vvu-company-type-selector formControlName="company_type"></vvu-company-type-selector>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <p-inputMask id="founded-input" mask="9999" formControlName="founded"></p-inputMask>
+              <label for="founded-input">Founded</label>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="website-input" type="text" pInputText formControlName="website" />
+              <label for="website-input">Website</label>
+              <span class="text-xs text-red-500" *ngIf="f.website.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- COL 2 -->
+      <div>
+        <!-- HEADQUARTERS ADDRESS -->
+        <h2 class="text-base font-bold pb-8">Headquarters Address</h2>
+        <div class="grid grid-rows-8 gap-8">
+          <div>
+            <span class="p-float-label">
+              <input id="address-line-1-input" type="text" pInputText formControlName="address_line_1" />
+              <label for="address-line-1-input">Address Line 1</label>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_1.errors?.pattern" {{ inputValidators.addressLine.errorMessage }}></span>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="address-line-2-input" type="text" pInputText formControlName="address_line_2" />
+              <label for="address-line-2-input">Address Line 2</label>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_2.errors?.pattern" {{ inputValidators.addressLine.errorMessage }}></span>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="address-line-3-input" type="text" pInputText formControlName="address_line_3" />
+              <label for="address-line-3-input">Address Line 3</label>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_3.errors?.pattern" {{ inputValidators.addressLine.errorMessage }}></span>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="city-input" type="text" pInputText formControlName="city" />
+              <label for="city-input">City</label>
+              <span class="text-xs text-red-500" *ngIf="f.city.errors?.pattern" {{ inputValidators.placeName.errorMessage }}></span>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="state-province-input" type="text" pInputText formControlName="state_province" />
+              <label for="state-province-input">State/Province</label>
+              <span class="text-xs text-red-500" *ngIf="f.state_province.errors?.pattern" {{ inputValidators.placeName.errorMessage }}></span>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="postal-code-input" type="text" pInputText formControlName="postal_code" />
+              <label for="postal-code-input">Postal Code</label>
+              <span class="text-xs text-red-500" *ngIf="f.postal_code?.errors?.pattern" {{ inputValidators.alphaNumHyphen.errorMessage }}></span>
+            </span>
+          </div>
+          <div class="row-span-3">
+            <vvu-country-selector formControlName="country"></vvu-country-selector>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- OVERVIEW -->
+      <h2 class="text-base font-bold pb-8">Overview</h2>
+      <div class="grid grid-rows-8 gap-8">
+        <div>
+          <vvu-key-chips formControlName="key_products" keyType="Key Products"></vvu-key-chips>
+        </div>
+        <div>
+          <vvu-key-chips formControlName="key_services" keyType="Key Services"></vvu-key-chips>
+        </div>
+        <div class="row-span-6 flex">
+          <span class="p-float-label flex w-full">
+            <textarea id="description-input" pInputTextarea formControlName="description" [autoResize]="true"></textarea>
+            <label for="description-input">Description</label>
+          </span>
+        </div>
+        <p-button
+          (click)="onSubmit()"
+          label="Submit"
+          [disabled]="!companyProfileForm.valid"
+        ></p-button>
+      </div>
+    </div>
+  </form>
+</div>

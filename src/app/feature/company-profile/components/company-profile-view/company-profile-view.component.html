@@ -1,0 +1,79 @@
+<div class="company-profile-view">
+
+  <!-- HEADER AND LOGO -->
+  <div class="company-profile-view__header">
+    <div class="company-profile-view__header__logo flex flex-col">
+      <img />
+    </div>
+  </div>
+
+  <!-- COMPANY PROFILE INFO -->
+  <div class="grid grid-cols-12 mt-28">
+
+    <!-- COL 1 -->
+    <div class="col-span-3 ml-6">
+      <div class="grid grid-rows-7 gap-2">
+        <div>
+          <h2 class="font-bold text-2xl text-left pt-2">{{ account?.company_profile?.name }}</h2>
+        </div>
+        <div>
+          <h3 class="font-bold">Industry</h3>
+          <span>{{ industryName }}</span>
+        </div>
+        <div>
+          <h3 class="font-bold">Employees</h3>
+          <span>{{ employeeCountRange }}</span>
+        </div>
+        <div>
+          <h3 class="font-bold">Annual Revenue</h3>
+          <span>{{ yearlyRevenueRange }}</span>
+        </div>
+        <div>
+          <h3 class="font-bold">Company Type</h3>
+          <span>{{ companyType }}</span>
+        </div>
+        <div>
+          <h3 class="font-bold">Parent Company</h3>
+          <span>{{ account?.company_profile?.parent_company }}</span>
+        </div>
+        <div>
+          <h3 class="font-bold">Founded</h3>
+          <span>{{ account?.company_profile?.founded }}</span>
+        </div>
+        <div>
+          <h3 class="font-bold">Website Address</h3>
+          <span>{{ account?.company_profile?.website }}</span>
+        </div>
+      </div>
+
+      <div class="grid grid-rows pt-2">
+        <div>
+          <h3 class="font-bold">Headquarters</h3>
+          <div>{{ account?.company_profile?.address_line_1 }}</div>
+          <div *ngIf="account?.company_profile?.address_line_2">{{ account?.company_profile?.address_line_2 }}</div>
+          <div *ngIf="account?.company_profile?.address_line_3">{{ account?.company_profile?.address_line_3 }}</div>
+          <div>{{ account?.company_profile?.city }}, {{ account?.company_profile?.state_province }}</div>
+          <div>{{ account?.company_profile?.postal_code }}</div>
+          <div>{{ account?.company_profile?.country }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 2 -->
+    <div class="col-span-9">
+      <div class="grid grid-rows-3 gap-2">
+        <forn *ngIf="account && chipsForm" [formGroup]="chipsForm">
+          <div>
+            <h2 class="font-bold text-2xl text-left pt-2">Products</h2>
+            <vvu-key-chips [keyType]="'Key Products'" [isReadOnly]="true" formControlName="key_products"></vvu-key-chips>
+          </div>
+          <div>
+            <h2 class="font-bold text-2xl text-left pt-2">Services</h2>
+            <vvu-key-chips [keyType]="'Key Services'" [isReadOnly]="true" formControlName="key_services"></vvu-key-chips>
+          </div>
+        </forn>
+        <div class="mt-6">{{ account?.company_profile?.description }}</div>
+      </div>
+    </div>
+  </div>
+</div>

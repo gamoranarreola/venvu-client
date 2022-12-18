@@ -1,0 +1,24 @@
+.company-profile-view {
+  @apply w-full;
+
+  &__header {
+    background-color: #0030b7;
+    height: 200px;
+
+    &__logo {
+      position: relative;
+      top: 100px;
+      @apply ml-6;
+
+      img {
+        width: 200px;
+        height: 200px;
+        @apply bg-slate-200;
+      }
+
+      h2 {
+        width: 200px;
+      }
+    }
+  }
+}

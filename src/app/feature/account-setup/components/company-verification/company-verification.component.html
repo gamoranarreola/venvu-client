@@ -1,0 +1,45 @@
+<div class="w-2/5 flex flex-col pt-16">
+  <h1 class="text-xl text-center pb-16">Company verification</h1>
+  <form [formGroup]="companyVerificationForm" (ngSubmit)="onSubmit()" class="grid grid-rows-5 grid-flow-col gap-4 pb-16">
+    <div>
+      <label>Name</label>
+      <input type="text" pInputText formControlName="name" />
+      <span *ngIf="f.name.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+    </div>
+    <div>
+      <label>Parent Company</label>
+      <input type="text" pInputText formControlName="parent_company" />
+      <span *ngIf="f.parent_company.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+    </div>
+    <div>
+      <label>Website</label>
+      <input type="text" pInputText formControlName="website" />
+      <span *ngIf="f.website.errors?.pattern">{{ inputValidators.webURL.errorMessage }}</span>
+    </div>
+    <div>
+      <label>State Tax ID</label>
+      <input type="text" pInputText formControlName="state_tax_id" />
+      <span *ngIf="f.state_tax_id.errors?.pattern">{{ inputValidators.alphaNumHyphen.errorMessage }}</span>
+    </div>
+    <div>
+      <label>Tax ID State</label>
+      <input type="text" pInputText formControlName="tax_id_state" />
+      <span *ngIf="f.tax_id_state.errors?.pattern">{{ inputValidators.alphaNumHyphen.errorMessage }}</span>
+    </div>
+  </form>
+  <div class="grid grid-cols-2 gap-6">
+    <button
+      pButton
+      type="button"
+      (click)="prev()"
+      label="Go to Previous Step">
+    </button>
+    <button
+      pButton
+      type="button"
+      (click)="onSubmit()"
+      label="Submit"
+      [disabled]="!companyVerificationForm.valid">
+    </button>
+  </div>
+</div>
