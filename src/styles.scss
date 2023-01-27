@@ -2,7 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -35,6 +36,32 @@ body {
   background-color: #0030b7;
 }
 
+vvu-vertical-nav {
+  .p-panelmenu .p-menuitem-text,
+  .p-menuitem-icon,
+  .pi-chevron-right > a {
+    color: #0030b7;
+  }
+}
+
+vvu-vertical-nav {
+  .pi-chevron-right {
+    color: #0030b7;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu .p-panelmenu-header > a {
+    border-color: #fafafa;
+  }
+}
+
+vvu-vertical-nav {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .p-panelmenu-icon {
   order: 1; // Chevron icon to be the first item on right side.
 }
@@ -43,8 +70,10 @@ body {
   flex-grow: 1; // Fill the whole space and push the Chevron icon to the end.
 }
 
+/* Horizontal bar and navigation */
+
 .p-toolbar {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .p-menubar {
