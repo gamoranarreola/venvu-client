@@ -16,7 +16,11 @@ export class AccountMenuComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   logout(): void {
-    this.authService.logout({returnTo: env.auth.logoutUrl})
+    this.authService.logout({
+      async openUrl() {
+        window.location.replace(env.auth.authorizationParams.logoutUrl);
+      }
+    });
   }
 
   ngOnInit(): void {

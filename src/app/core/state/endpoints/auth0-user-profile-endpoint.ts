@@ -26,14 +26,14 @@ export class Auth0UserProfileEndpoint {
           name: auth0UserProfile?.name,
           nickname: auth0UserProfile?.nickname,
           picture: auth0UserProfile?.picture,
-          roles: auth0UserProfile![env.auth.audience + '/roles'].map((r: unknown) => new Role({name: r})),
-          user_metadata: auth0UserProfile![env.auth.audience + '/user_metadata'],
+          roles: auth0UserProfile![env.auth.authorizationParams.audience + '/roles'].map((r: unknown) => new Role({name: r})),
+          user_metadata: auth0UserProfile![env.auth.authorizationParams.audience + '/user_metadata'],
           sub: auth0UserProfile?.sub,
           updated_at: auth0UserProfile?.updated_at
         });
       }),
       catchError(err => {
-        return throwError(err);
+        return throwError(() => new Error(err));
       })
     )
   }
