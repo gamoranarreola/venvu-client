@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 body,
 html {
   width: 100%;
@@ -98,4 +99,9 @@ vvu-account-menu {
       right: 0%;
     }
   }
+}
+
+.horizontal-nav > .p-element > div {
+  border-radius: 0;
+  border: none;
 }
