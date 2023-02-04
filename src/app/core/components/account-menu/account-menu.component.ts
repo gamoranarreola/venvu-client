@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { environment as env } from "src/environments/environment";
-import { AuthService } from "@auth0/auth0-angular";
-import { MenuItem } from "primeng/api";
+import { environment as env } from 'src/environments/environment';
+import { AuthService } from '@auth0/auth0-angular';
+import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: "vvu-account-menu",
-  templateUrl: "./account-menu.component.html",
-  styleUrls: ["./account-menu.component.scss"],
+  selector: 'vvu-account-menu',
+  templateUrl: './account-menu.component.html',
+  styleUrls: ['./account-menu.component.scss'],
 })
 export class AccountMenuComponent implements OnInit {
   menuItems: MenuItem[] = [];
@@ -15,22 +15,25 @@ export class AccountMenuComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   logout(): void {
-    this.authService.logout({ returnTo: env.auth.logoutUrl });
+    this.authService.logout({
+      async openUrl() {
+        window.location.replace(env.auth.authorizationParams.logoutUrl);
+      },
+    });
   }
 
   ngOnInit(): void {
     this.menuItems = [
       {
-        icon: "pi pi-cog",
+        icon: 'pi pi-cog',
         items: [
-          { label: "Support", icon: "pi pi-question-circle" },
-          { label: "Terms of Usage", icon: "pi pi-info-circle" },
+          { label: 'Support' },
+          { label: 'Terms of Usage' },
           {
-            label: "Logout",
+            label: 'Logout',
             command: (event) => {
               this.logout();
             },
-            icon: "pi pi-power-off",
           },
         ],
       },
