@@ -9,8 +9,7 @@ export const environment = {
     clientId: "7eAQJF8uFLTdGb7t75mVZIeXEX3kp6Kh",
     authorizationParams: {
       audience: "https://vms-b2b.app",
-      redirect_uri: "http://localhost:4200/f/dashboard",
-      logoutUrl: "http://localhost:4200"
+      redirect_uri: "http://localhost:4200/f/dashboard"
     }
   },
   ...defaultEnvironment
