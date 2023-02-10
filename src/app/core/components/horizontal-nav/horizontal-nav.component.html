@@ -13,10 +13,16 @@
       </div>
     </div>
     <div>
-      <vvu-rep-menu *ngIf="account?.account_type !== null && auth0UserProfile?.isRep()"></vvu-rep-menu>
+      <vvu-rep-menu
+        *ngIf="account?.account_type !== null && auth0UserProfile?.isRep()"
+      ></vvu-rep-menu>
     </div>
     <div class="p-toolbar-group-right">
       <vvu-account-menu class="my-class"></vvu-account-menu>
     </div>
   </p-toolbar>
 </div>
+
+<!--
+  *ngIf="account?.account_type !== null && auth0UserProfile?.isRep()"
+-->

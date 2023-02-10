@@ -23,33 +23,28 @@ export class RepMenuComponent implements OnInit {
       this.menuItems = [
         {
           label: 'Projects',
-          items: [
-            { label: 'Create New' },
-            { label: 'View All Projects' }
-          ]
+          icon: 'pi pi-folder',
+          items: [{ label: 'Create New' }, { label: 'View All Projects' }],
         },
         {
           label: 'Vendor Directory',
-          items: [
-            { label: 'New Search' },
-            { label: 'Saved Searches' }
-          ]
+          icon: 'pi pi-list',
+          items: [{ label: 'New Search' }, { label: 'Saved Searches' }],
         },
         {
           label: 'Technical Library',
+          icon: 'pi pi-book',
           items: [
             { label: 'New Search' },
             { label: 'All Checkouts' },
-            { label: 'Recent Checkouts' }
-          ]
+            { label: 'Recent Checkouts' },
+          ],
         },
         {
           label: 'Engagement Manager',
-          items: [
-            { label: 'Post a Need' },
-            { label: 'View Communications' }
-          ]
-        }
+          icon: 'pi pi-comments',
+          items: [{ label: 'Post a Need' }, { label: 'View Communications' }],
+        },
       ];
     });
   }
