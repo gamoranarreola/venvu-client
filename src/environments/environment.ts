@@ -7,9 +7,10 @@ export const environment = {
   auth: {
     domain: "dev-dh8aqmc6.us.auth0.com",
     clientId: "7eAQJF8uFLTdGb7t75mVZIeXEX3kp6Kh",
-    redirectUri: "http://localhost:4200/f/dashboard",
-    audience: "https://vms-b2b.app",
-    logoutUrl: "http://localhost:4200"
+    authorizationParams: {
+      audience: "https://vms-b2b.app",
+      redirect_uri: "http://localhost:4200/f/dashboard"
+    }
   },
   ...defaultEnvironment
 };
