@@ -7,7 +7,7 @@
   [style]="{ 'margin-top': '60px' }"
 >
   <ng-container *ngIf="navConfig && navConfig.adminMenu">
-    <h4 class="uppercase mb-2" [style]="{ color: '#fafafa' }">
+    <h4 class="uppercase ml-3 mb-2">
       {{ navConfig.adminMenu.menuHeader }}
     </h4>
     <p-panelMenu
@@ -17,7 +17,7 @@
     </p-panelMenu>
   </ng-container>
   <ng-container *ngIf="navConfig && navConfig.publisherMenu">
-    <h4 class="uppercase mb-2 mt-8" [style]="{ color: '#fafafa' }">
+    <h4 class="uppercase ml-3 mb-2 mt-8">
       {{ navConfig.publisherMenu.menuHeader }}
     </h4>
     <p-panelMenu
