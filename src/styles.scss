@@ -62,7 +62,10 @@ vvu-vertical-nav {
 }
 
 vvu-vertical-nav {
-  .p-panelmenu .p-panelmenu-panel:last-child .p-panelmenu-header:not(.p-highlight) > a {
+  .p-panelmenu
+    .p-panelmenu-panel:last-child
+    .p-panelmenu-header:not(.p-highlight)
+    > a {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -209,21 +212,17 @@ vvu-account-menu {
 }
 
 vvu-account-menu {
-  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled) {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled) {
     background: #ffffff;
-    border-color: #ffffff
+    border-color: #ffffff;
   }
 }
 
 vvu-account-menu {
   .p-menubar {
     border-color: #ffffff;
-  }
-}
-
-vvu-account-menu {
-  .p-menubarsub ul > li {
-    margin-right: 10px;
-    border-color: rebeccapurple;
   }
 }
