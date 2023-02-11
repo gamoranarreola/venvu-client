@@ -4,19 +4,26 @@
   [dismissible]="false"
   [showCloseIcon]="false"
   [modal]="false"
-  [style]="{'margin-top': '60px'}">
+  [style]="{ 'margin-top': '60px' }"
+>
   <ng-container *ngIf="navConfig && navConfig.adminMenu">
-    <h4>{{ navConfig.adminMenu.menuHeader }}</h4>
+    <h4 class="uppercase ml-3 mb-2">
+      {{ navConfig.adminMenu.menuHeader }}
+    </h4>
     <p-panelMenu
       [model]="navConfig.adminMenu.menuItems"
-      [style]="{'width': '100%'}">
+      [style]="{ width: '100%' }"
+    >
     </p-panelMenu>
   </ng-container>
   <ng-container *ngIf="navConfig && navConfig.publisherMenu">
-    <h4>{{ navConfig.publisherMenu.menuHeader }}</h4>
+    <h4 class="uppercase ml-3 mb-2 mt-8">
+      {{ navConfig.publisherMenu.menuHeader }}
+    </h4>
     <p-panelMenu
       [model]="navConfig.publisherMenu.menuItems"
-      [style]="{'width': '100%'}">
+      [style]="{ width: '100%' }"
+    >
     </p-panelMenu>
   </ng-container>
 </p-sidebar>

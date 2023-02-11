@@ -2,7 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -26,25 +27,119 @@ body {
 
 /* Vertical navigation */
 
-.p-sidebar-left {
-  width: 16rem !important;
+vvu-vertical-nav {
+  .p-sidebar-left {
+    width: 16rem !important;
+  }
 }
 
-.p-sidebar,
-.p-button {
-  background-color: #0030b7;
+vvu-vertical-nav {
+  .p-sidebar,
+  .p-button {
+    background-color: #0030b7;
+  }
 }
 
-.p-panelmenu-icon {
-  order: 1; // Chevron icon to be the first item on right side.
+vvu-vertical-nav {
+  .p-sidebar .p-sidebar-content {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
-.p-menuitem-text {
-  flex-grow: 1; // Fill the whole space and push the Chevron icon to the end.
+vvu-vertical-nav {
+  .p-panelmenu .p-panelmenu-panel:first-child .p-panelmenu-header > a {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
 }
+
+vvu-vertical-nav {
+  .p-panelmenu .p-panelmenu-panel:last-child .p-panelmenu-content {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu
+    .p-panelmenu-panel:last-child
+    .p-panelmenu-header:not(.p-highlight)
+    > a {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu .p-menuitem-text,
+  .p-menuitem-icon,
+  .pi-chevron-right > a {
+    color: #fafafa;
+  }
+}
+
+vvu-vertical-nav {
+  .pi-chevron-right {
+    color: #fafafa;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu .p-panelmenu-header > a {
+    background-color: #0030b7;
+    border-color: #0030b7;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu
+    .p-panelmenu-header:not(.p-highlight):not(.p-disabled)
+    > a:hover {
+    background-color: #0030b7;
+    border-color: #0030b7;
+    color: #fafafa;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
+    background-color: #0030b7;
+    border-color: #0030b7;
+    color: #fafafa;
+  }
+}
+
+vvu-vertical-nav {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu-icon {
+    order: 1; // Chevron icon to be the first item on right side.
+  }
+}
+
+vvu-vertical-nav {
+  .p-menuitem-text {
+    flex-grow: 1; // Fill the whole space and push the Chevron icon to the end.
+  }
+}
+
+vvu-vertical-nav {
+  .p-panelmenu .p-panelmenu-header.p-highlight > a {
+    background: #0030b7;
+    color: #fafafa;
+    border-color: #0030b7;
+  }
+}
+
+/* Horizontal bar and navigation */
 
 .p-toolbar {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .p-menubar {
@@ -63,10 +158,71 @@ body {
   }
 }
 
+.horizontal-nav > .p-element > div {
+  border-radius: 0;
+  border: none;
+}
+
+vvu-rep-menu {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-text {
+    color: #0030b7;
+    font-weight: bold;
+  }
+}
+
+vvu-rep-menu {
+  div.p-menubar.p-component {
+    border-color: #ffffff;
+    background-color: #ffffff;
+  }
+}
+
+vvu-rep-menu {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-menuitem-icon {
+    color: #0030b7;
+    margin-right: 0.5rem;
+  }
+}
+
+vvu-rep-menu {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link
+    .p-submenu-icon {
+    color: #0030b7;
+    margin-left: 0.5rem;
+  }
+}
+
 vvu-account-menu {
   ul {
     .p-submenu-list {
       right: 0%;
     }
+  }
+}
+
+vvu-account-menu {
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link:not(.p-disabled) {
+    background: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+vvu-account-menu {
+  .p-menubar {
+    border-color: #ffffff;
   }
 }
