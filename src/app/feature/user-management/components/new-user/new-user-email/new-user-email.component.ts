@@ -3,8 +3,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+import { AccountSetupService } from 'src/app/feature/account-setup/account-setup.service';
 import { environment as env } from 'src/environments/environment';
-import { NewUserService } from '../new-user.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { NewUserService } from '../new-user.service';
 })
 export class NewUserEmailComponent implements OnInit, OnDestroy {
 
-  newUser: any
+  accountSetup: any
   newUserEmailForm!: FormGroup
   inputValidators!: any
 
@@ -22,7 +22,7 @@ export class NewUserEmailComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private newUserService: NewUserService,
+    private accountSetupService: AccountSetupService,
     private router: Router
   ) {
     this.inputValidators = env.inputValidators
@@ -38,18 +38,18 @@ export class NewUserEmailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.add(
-      this.newUserService.newUserSetup$.subscribe(data => this.newUser = data)
+      this.accountSetupService.accountSetup$.subscribe(data => this.accountSetup = data)
     )
 
     this.newUserEmailForm = this.fb.group({
-      email_address: new FormControl(this.newUser.email_address, [
+      email_address: new FormControl(this.accountSetup.userData.email_address, [
         Validators.required,
         Validators.email
       ])
     })
 
     this.subscriptions.add(
-      this.newUserEmailForm.valueChanges.subscribe(data => this.newUser.email_address = data.email_address)
+      this.newUserEmailForm.valueChanges.subscribe(data => this.accountSetup.userData.email_address = data.email_address)
     )
   }
 

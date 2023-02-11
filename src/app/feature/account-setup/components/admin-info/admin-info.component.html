@@ -1,6 +1,6 @@
 <div class="w-2/5 flex flex-col pt-16">
   <h1 class="text-xl text-center pb-16">Fill in your admin information</h1>
-  <form [formGroup]="adminInfoForm" class="grid grid-rows-4 grid-flow-col gap-4 pb-16">
+  <form [formGroup]="userDataForm" class="grid grid-rows-4 grid-flow-col gap-4 pb-16">
     <div>
       <label>Name(s)</label>
       <input type="text" pInputText formControlName="given_names" />
@@ -34,7 +34,7 @@
       type="button"
       (click)="next()"
       label="Continue"
-      [disabled]="!adminInfoForm.valid">
+      [disabled]="!userDataForm.valid">
     </button>
   </div>
 </div>

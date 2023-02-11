@@ -1,1 +1,43 @@
-<p>user-profile works!</p>
+<div class="w-3/5 flex flex-col pt-16">
+  <h1 class="text-xl text-center pb-2">Create user profile.</h1>
+  <h3 class="text-center pb-16">The profile will be viewable by all users of venvu.</h3>
+  <p-card>
+    <form [formGroup]="newUserProfileForm" class="grid grid-rows-4 grid-flow-col gap-4 pb-16">
+      <div>
+        <label>Name(s)</label>
+        <input type="text" pInputText formControlName="given_names" />
+        <span *ngIf="f.given_names.errors?.pattern">{{ inputValidators.personName.errorMessage }}</span>
+      </div>
+      <div>
+        <label>Last Name(s)</label>
+        <input type="text" pInputText formControlName="surnames" />
+        <span *ngIf="f.surnames.errors?.pattern">{{ inputValidators.personName.errorMessage }}</span>
+      </div>
+      <div>
+        <label>Department</label>
+        <input type="text" pInputText formControlName="department" />
+        <span *ngIf="f.department.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+      </div>
+      <div>
+        <label>Job Title</label>
+        <input type="text" pInputText formControlName="job_title" />
+        <span *ngIf="f.job_title.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+      </div>
+    </form>
+    <div class="grid grid-cols-2 gap-6">
+      <button
+        pButton
+        type="button"
+        (click)="prev()"
+        label="Go to Previous Step">
+      </button>
+      <button
+        pButton
+        type="button"
+        (click)="next()"
+        label="Continue"
+        [disabled]="!newUserProfileForm.valid">
+      </button>
+    </div>
+  </p-card>
+</div>

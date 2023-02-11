@@ -1,8 +1,20 @@
-<div class="w-3/5 flex flex-col pt-16">
+<div class="w-4/5 flex flex-col pt-16">
   <h1 class="text-xl text-center pb-16">Select the new user's role(s) and set the permissions.</h1>
-  <form *ngIf="rolesForm" [formGroup]="rolesForm">
-    <p-card>
-
-    </p-card>
-  </form>
+  <p-card>
+    <vvu-role-selection [adminPreSelect]="false "></vvu-role-selection>
+    <div class="grid grid-cols-2 gap-6">
+      <button
+        pButton
+        type="button"
+        (click)="prev()"
+        label="Go to Previous Step">
+      </button>
+      <button
+        pButton
+        type="button"
+        (click)="next()"
+        label="Continue">
+      </button>
+    </div>
+  </p-card>
 </div>

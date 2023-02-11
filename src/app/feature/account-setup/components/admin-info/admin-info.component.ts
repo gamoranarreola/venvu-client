@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class AdminInfoComponent implements OnInit, OnDestroy {
 
   accountSetup: any
-  adminInfoForm!: FormGroup
+  userDataForm!: FormGroup
   inputValidators!: any
 
   private readonly subscriptions = new Subscription()
@@ -36,7 +36,7 @@ export class AdminInfoComponent implements OnInit, OnDestroy {
   }
 
   get f(): {[key: string]: AbstractControl} {
-    return this.adminInfoForm.controls
+    return this.userDataForm.controls
   }
 
   ngOnInit(): void {
@@ -44,27 +44,27 @@ export class AdminInfoComponent implements OnInit, OnDestroy {
       this.accountSetupService.accountSetup$.subscribe(data => this.accountSetup = data)
     )
 
-    this.adminInfoForm = this.fb.group({
-      given_names: new FormControl(this.accountSetup.adminInfo.given_names, [
+    this.userDataForm = this.fb.group({
+      given_names: new FormControl(this.accountSetup.userData.given_names, [
         Validators.required,
         Validators.pattern(this.inputValidators.personName.pattern)
       ]),
-      surnames: new FormControl(this.accountSetup.adminInfo.surnames, [
+      surnames: new FormControl(this.accountSetup.userData.surnames, [
         Validators.required,
         Validators.pattern(this.inputValidators.personName.pattern)
       ]),
-      department: new FormControl(this.accountSetup.adminInfo.department, [
+      department: new FormControl(this.accountSetup.userData.department, [
         Validators.required,
         Validators.pattern(this.inputValidators.textInput.pattern)
       ]),
-      job_title: new FormControl(this.accountSetup.adminInfo.job_title, [
+      job_title: new FormControl(this.accountSetup.userData.job_title, [
         Validators.required,
         Validators.pattern(this.inputValidators.textInput.pattern)
       ])
     })
 
     this.subscriptions.add(
-      this.adminInfoForm.valueChanges.subscribe(data => this.accountSetup.adminInfo = data)
+      this.userDataForm.valueChanges.subscribe(data => this.accountSetup.userData = data)
     )
   }
 

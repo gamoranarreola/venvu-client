@@ -8,5 +8,13 @@
       </ng-template>
       <p>{{ r.description }}</p>
     </p-card>
+    <p-card *ngIf="!adminPreSelect">
+      <ng-template pTemplate="header">
+        <h1 class="text-center font-bold flex justify-center">{{ r.name }}&nbsp;&nbsp;
+          <p-checkbox value="{{ r.name }}" [(ngModel)]="accountSetup.selectedRoleNames"></p-checkbox>
+        </h1>
+      </ng-template>
+      <p>{{ r.description }}</p>
+    </p-card>
   </ng-container>
 </div>

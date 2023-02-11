@@ -49,10 +49,10 @@ export class CompanyVerificationComponent implements OnInit, OnDestroy {
       email: this.account?.email,
       account: {
         account_type: this.accountSetup.account_type,
-        given_names: this.accountSetup.adminInfo.given_names,
-        surnames: this.accountSetup.adminInfo.surnames,
-        department: this.accountSetup.adminInfo.department,
-        job_title: this.accountSetup.adminInfo.job_title,
+        given_names: this.accountSetup.userData.given_names,
+        surnames: this.accountSetup.userData.surnames,
+        department: this.accountSetup.userData.department,
+        job_title: this.accountSetup.userData.job_title,
         roles: this.accountSetup.selectedRoleNames
       } as Account,
       company_profile: {
