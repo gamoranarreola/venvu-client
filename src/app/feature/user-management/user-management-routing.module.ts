@@ -25,7 +25,7 @@ const routes: Routes = [
         component: NewUserRolesAndPermissionsComponent
       },
       {
-        path: 'profile',
+        path: 'user-profile',
         component: NewUserProfileComponent
       },
       {

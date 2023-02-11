@@ -52,7 +52,7 @@ export class AccountEndpoint {
         }
       }),
       catchError((err: HttpErrorResponse) => {
-        return throwError(err);
+        return throwError(() => new Error(err.message));
       })
     );
   }

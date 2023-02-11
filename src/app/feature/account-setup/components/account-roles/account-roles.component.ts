@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './account-roles.component.html',
   styleUrls: ['./account-roles.component.scss']
 })
-export class AccountRolesComponent implements OnInit {
+export class AccountRolesComponent {
 
   constructor(private router: Router) { }
 
@@ -17,9 +17,6 @@ export class AccountRolesComponent implements OnInit {
 
   next(): void {
     this.router.navigate(['f/account-setup/company-verification'])
-  }
-
-  ngOnInit(): void {
   }
 
 }

@@ -13,6 +13,7 @@ import { NewUserEmailComponent } from './components/new-user/new-user-email/new-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ButtonModule } from 'primeng/button';
     CardModule,
     InputTextModule,
     ButtonModule,
-    UserManagementRoutingModule
+    UserManagementRoutingModule,
+    SharedModule
   ]
 })
 export class UserManagementModule { }

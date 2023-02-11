@@ -16,7 +16,7 @@ export class AccountSetupService {
       account_type: '',
       allRoles: [],
       selectedRoleNames: [],
-      adminInfo: {},
+      userData: {},
       companyProfile: {}
     })
   }

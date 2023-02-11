@@ -12,10 +12,10 @@ export class NewUserService {
 
   constructor() {
     this._newUserSetup$.next({
-      email_address: '',
+      emailAddress: '',
       roles: [],
-      user_profile: {},
-      auth0_available: false
+      userProfile: {},
+      auth0Available: false
     })
   }
 
