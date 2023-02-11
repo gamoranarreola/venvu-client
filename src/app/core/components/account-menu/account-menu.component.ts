@@ -15,7 +15,7 @@ export class AccountMenuComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   logout(): void {
-    this.authService.logout({ returnTo: env.auth.logoutUrl });
+    this.authService.logout({ logoutParams: { returnTo: document.location.origin } });
   }
 
   ngOnInit(): void {
