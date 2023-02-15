@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment as env } from 'src/environments/environment';
 import { AuthService } from '@auth0/auth0-angular';
 import { MenuItem } from 'primeng/api';
 

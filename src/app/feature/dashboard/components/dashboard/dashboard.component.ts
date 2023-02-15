@@ -27,15 +27,17 @@ export class DashboardComponent implements OnInit {
 
       this.account = data
 
-      if (!this.account.account_type || !this.account.company_profile) {
+      if (!this.account.account_type) {
         this.router.navigate(['f/account-setup'])
 
         this.messageService.add({
           severity: 'info',
           summary: 'Account Setup',
-          detail: 'You\'ve been redirected to the account setup page, because you have not yet defined your account type and/or company profile.',
+          detail: 'You\'ve been redirected to the account setup page to complete some required information.',
           sticky: true
         })
+      } else if (this.account.account_type && !this.account.is_tax_id_verified) {
+        this.router.navigate(['f/not-verified'])
       }
     })
   }

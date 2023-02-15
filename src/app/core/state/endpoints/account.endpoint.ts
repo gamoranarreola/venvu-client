@@ -42,9 +42,12 @@ export class AccountEndpoint {
             email: res.body?.data?.email,
             given_names: res.body?.data?.given_names,
             id: res.body?.data?.id,
+            is_tax_id_verified: res.body?.data?.is_tax_id_verified,
             job_title: res.body?.data?.job_title,
             phone: res.body?.data?.phone,
+            state_tax_id: res.body?.data?.state_tax_id,
             sub: res.body?.data?.sub,
+            tax_id_state: res.body?.data?.tax_id_state,
             roles: res.body?.data?.roles!.map((r: unknown) => new Role({name: r}))
           })
         } else {

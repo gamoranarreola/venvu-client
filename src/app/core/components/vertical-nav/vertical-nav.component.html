@@ -1,4 +1,5 @@
 <p-sidebar
+  *ngIf="account?.is_tax_id_verified"
   [visible]="true"
   [baseZIndex]="10000"
   [dismissible]="false"

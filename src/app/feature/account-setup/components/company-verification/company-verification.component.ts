@@ -53,14 +53,14 @@ export class CompanyVerificationComponent implements OnInit, OnDestroy {
         surnames: this.accountSetup.userData.surnames,
         department: this.accountSetup.userData.department,
         job_title: this.accountSetup.userData.job_title,
-        roles: this.accountSetup.selectedRoleNames
+        roles: this.accountSetup.selectedRoleNames,
+        state_tax_id: this.accountSetup.companyProfile.state_tax_id,
+        tax_id_state: this.accountSetup.companyProfile.tax_id_state
       } as Account,
       company_profile: {
         name: this.accountSetup.companyProfile.name,
         parent_company: this.accountSetup.companyProfile.parent_company,
         website: this.accountSetup.companyProfile.website,
-        state_tax_id: this.accountSetup.companyProfile.state_tax_id,
-        tax_id_state: this.accountSetup.companyProfile.tax_id_state
       } as CompanyProfile,
       selectedRoleIds: this.accountSetup.selectedRoleNames.map((roleName: string) => this.accountSetup.allRoles.find((role: Role) => role.name === roleName).id)
     }

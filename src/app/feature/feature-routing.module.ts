@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: 'company-profile',
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'create-new-user',
     loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule)
+  },
+  {
+    path: 'not-verified',
+    loadChildren: () => import('./not-verified/not-verified.module').then(m => m.NotVerifiedModule)
   }
 ];
 
