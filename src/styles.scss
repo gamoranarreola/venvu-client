@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body,
 html {
@@ -12,6 +12,10 @@ html {
 body {
   display: flex;
   flex-direction: column;
+}
+
+.p-button {
+  background-color: #0030b7;
 }
 
 /* Company Profile components */
@@ -31,37 +35,27 @@ vvu-vertical-nav {
   .p-sidebar-left {
     width: 16rem !important;
   }
-}
 
-vvu-vertical-nav {
   .p-sidebar,
   .p-button {
     background-color: #0030b7;
   }
-}
 
-vvu-vertical-nav {
   .p-sidebar .p-sidebar-content {
     padding-right: 0;
     padding-left: 0;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu .p-panelmenu-panel:first-child .p-panelmenu-header > a {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu .p-panelmenu-panel:last-child .p-panelmenu-content {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu
     .p-panelmenu-panel:last-child
     .p-panelmenu-header:not(.p-highlight)
@@ -69,30 +63,22 @@ vvu-vertical-nav {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu .p-menuitem-text,
   .p-menuitem-icon,
   .pi-chevron-right > a {
     color: #fafafa;
   }
-}
 
-vvu-vertical-nav {
   .pi-chevron-right {
     color: #fafafa;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu .p-panelmenu-header > a {
     background-color: #0030b7;
     border-color: #0030b7;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu
     .p-panelmenu-header:not(.p-highlight):not(.p-disabled)
     > a:hover {
@@ -100,39 +86,29 @@ vvu-vertical-nav {
     border-color: #0030b7;
     color: #fafafa;
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
     background-color: #0030b7;
     border-color: #0030b7;
     color: #fafafa;
   }
-}
 
-vvu-vertical-nav {
-  ::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-vvu-vertical-nav {
   .p-panelmenu-icon {
     order: 1; // Chevron icon to be the first item on right side.
   }
-}
 
-vvu-vertical-nav {
   .p-menuitem-text {
     flex-grow: 1; // Fill the whole space and push the Chevron icon to the end.
   }
-}
 
-vvu-vertical-nav {
   .p-panelmenu .p-panelmenu-header.p-highlight > a {
     background: #0030b7;
     color: #fafafa;
     border-color: #0030b7;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -172,16 +148,12 @@ vvu-rep-menu {
     color: #0030b7;
     font-weight: bold;
   }
-}
 
-vvu-rep-menu {
   div.p-menubar.p-component {
     border-color: #ffffff;
     background-color: #ffffff;
   }
-}
 
-vvu-rep-menu {
   .p-menubar
     .p-menubar-root-list
     > .p-menuitem
@@ -190,9 +162,7 @@ vvu-rep-menu {
     color: #0030b7;
     margin-right: 0.5rem;
   }
-}
 
-vvu-rep-menu {
   .p-menubar
     .p-menubar-root-list
     > .p-menuitem
@@ -209,20 +179,16 @@ vvu-account-menu {
       right: 0%;
     }
   }
-}
 
-vvu-account-menu {
+  .p-menubar {
+    border-color: #ffffff;
+  }
+
   .p-menubar
     .p-menubar-root-list
     > .p-menuitem
     > .p-menuitem-link:not(.p-disabled) {
     background: #ffffff;
-    border-color: #ffffff;
-  }
-}
-
-vvu-account-menu {
-  .p-menubar {
     border-color: #ffffff;
   }
 }
