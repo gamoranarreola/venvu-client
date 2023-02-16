@@ -20,15 +20,15 @@ export class AccountMenuComponent implements OnInit {
   ngOnInit(): void {
     this.menuItems = [
       {
-        icon: 'pi pi-cog',
+        icon: "pi pi-cog",
         items: [
-          { label: 'Support' },
-          { label: 'Terms of Usage' },
+          { label: "Support", icon: "pi pi-whatsapp" },
+          { label: "Terms of Usage", icon: "pi pi-list" },
           {
-            label: 'Logout',
+            label: "Logout",
             command: (event) => {
               this.logout();
-            },
+            }, icon: "pi pi-power-off"
           },
         ],
       },
