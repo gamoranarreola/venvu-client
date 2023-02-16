@@ -1,7 +1,7 @@
 import { CompanyProfile } from "./company-profile";
 import { Role } from "./role";
 
-export class Account {
+export interface Account {
   account_type?: string;
   company_profile?: CompanyProfile;
   department?: string;
@@ -18,8 +18,4 @@ export class Account {
   surnames?: string;
   tax_id_state?: string;
   type?: string;
-
-  constructor(opts: {}) {
-    Object.assign(this, opts);
-  }
 }

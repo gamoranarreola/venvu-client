@@ -100,14 +100,6 @@ export class CompanyProfileEditComponent implements OnInit, OnDestroy, AfterCont
         Validators.required,
         Validators.pattern(this.inputValidators.placeName.pattern)
       ]),
-      state_tax_id: new FormControl(this.account.company_profile?.state_tax_id, [
-        Validators.required,
-        Validators.pattern(this.inputValidators.alphaNumHyphen.pattern)
-      ]),
-      tax_id_state: new FormControl(this.account.company_profile?.tax_id_state, [
-        Validators.required,
-        Validators.pattern(this.inputValidators.placeName.pattern)
-      ]),
       website: new FormControl(this.account.company_profile?.website, Validators.pattern(this.inputValidators.webURL.pattern)),
       yearly_revenue_range: new FormControl(this.account.company_profile?.yearly_revenue_range, Validators.required)
     })

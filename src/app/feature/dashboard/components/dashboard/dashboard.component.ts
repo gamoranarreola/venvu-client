@@ -38,6 +38,8 @@ export class DashboardComponent implements OnInit {
         })
       } else if (this.account.account_type && !this.account.is_tax_id_verified) {
         this.router.navigate(['f/not-verified'])
+      } else if (this.account.account_type && this.account.is_tax_id_verified && !this.account.company_profile?.isComplete()) {
+        this.router.navigate(['f/company-profile/edit']);
       }
     })
   }

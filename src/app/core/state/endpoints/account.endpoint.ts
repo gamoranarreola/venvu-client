@@ -35,7 +35,7 @@ export class AccountEndpoint {
     ).pipe(
       map((res: HttpResponse<GenericApiResponse>) => {
         if (res.status === 200 && res.statusText === 'OK') {
-          return new Account({
+          return {
             account_type: res.body?.data?.account_type,
             company_profile: res.body?.data?.company_profile ? new CompanyProfile(res.body?.data?.company_profile) : undefined,
             department: res.body?.data?.department,
@@ -49,7 +49,7 @@ export class AccountEndpoint {
             sub: res.body?.data?.sub,
             tax_id_state: res.body?.data?.tax_id_state,
             roles: res.body?.data?.roles!.map((r: unknown) => new Role({name: r}))
-          })
+          } as Account
         } else {
           throw(new Error(''));
         }
