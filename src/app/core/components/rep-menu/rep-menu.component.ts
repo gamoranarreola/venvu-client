@@ -22,28 +22,37 @@ export class RepMenuComponent implements OnInit {
 
       this.menuItems = [
         {
-          label: 'Projects',
-          icon: 'pi pi-folder',
-          items: [{ label: 'Create New' }, { label: 'View All Projects' }],
-        },
-        {
-          label: 'Vendor Directory',
-          icon: 'pi pi-list',
-          items: [{ label: 'New Search' }, { label: 'Saved Searches' }],
-        },
-        {
-          label: 'Technical Library',
-          icon: 'pi pi-book',
+          label: "Projects",
+          icon: "pi pi-folder",
           items: [
-            { label: 'New Search' },
-            { label: 'All Checkouts' },
-            { label: 'Recent Checkouts' },
+            { label: "Create New", icon: "pi pi-plus" },
+            { label: "View All Projects", icon: "pi pi-folder-open" },
           ],
         },
         {
-          label: 'Engagement Manager',
-          icon: 'pi pi-comments',
-          items: [{ label: 'Post a Need' }, { label: 'View Communications' }],
+          label: "Vendor Directory",
+          icon: "pi pi-list",
+          items: [
+            { label: "New Search", icon: "pi pi-search" },
+            { label: "Saved Searches", icon: "pi pi-database" },
+          ],
+        },
+        {
+          label: "Technical Library",
+          icon: "pi pi-book",
+          items: [
+            { label: "New Search", icon: "pi pi-search" },
+            { label: "All Checkouts", icon: "pi pi-bars" },
+            { label: "Recent Checkouts", icon: "pi pi-file" },
+          ],
+        },
+        {
+          label: "Engagement Manager",
+          icon: "pi pi-comments",
+          items: [
+            { label: "Post a Need", icon: "pi pi-pencil" },
+            { label: "View Communications", icon: "pi pi-eye" },
+          ],
         },
       ];
     });
