@@ -14,6 +14,7 @@
               <input id="name-input" type="text" pInputText formControlName="name" />
               <label for="name-input">Name</label>
               <span class="text-xs text-red-500" *ngIf="f.name.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+              <span class="text-xs text-red-500" *ngIf="f.name.errors?.required">{{ inputValidators.required.errorMessage }}</span>
             </span>
           </div>
           <div>
@@ -25,15 +26,19 @@
           </div>
           <div>
             <vvu-industry-selector formControlName="industry"></vvu-industry-selector>
+            <span class="text-xs text-red-500" *ngIf="f.industry.errors?.required">{{ inputValidators.required.errorMessage }}</span>
           </div>
           <div>
             <vvu-employee-count-range-selector formControlName="employee_count_range"></vvu-employee-count-range-selector>
+            <span class="text-xs text-red-500" *ngIf="f.employee_count_range.errors?.required">{{ inputValidators.required.errorMessage }}</span>
           </div>
           <div>
             <vvu-yearly-revenue-range-selector formControlName="yearly_revenue_range"></vvu-yearly-revenue-range-selector>
+            <span class="text-xs text-red-500" *ngIf="f.yearly_revenue_range.errors?.required">{{ inputValidators.required.errorMessage }}</span>
           </div>
           <div>
             <vvu-company-type-selector formControlName="company_type"></vvu-company-type-selector>
+            <span class="text-xs text-red-500" *ngIf="f.company_type.errors?.required">{{ inputValidators.required.errorMessage }}</span>
           </div>
           <div>
             <span class="p-float-label">
@@ -59,46 +64,51 @@
             <span class="p-float-label">
               <input id="address-line-1-input" type="text" pInputText formControlName="address_line_1" />
               <label for="address-line-1-input">Address Line 1</label>
-              <span class="text-xs text-red-500" *ngIf="f.address_line_1.errors?.pattern" {{ inputValidators.addressLine.errorMessage }}></span>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_1.errors?.pattern">{{ inputValidators.addressLine.errorMessage }}</span>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_1.errors?.required">{{ inputValidators.required.errorMessage }}</span>
             </span>
           </div>
           <div>
             <span class="p-float-label">
               <input id="address-line-2-input" type="text" pInputText formControlName="address_line_2" />
               <label for="address-line-2-input">Address Line 2</label>
-              <span class="text-xs text-red-500" *ngIf="f.address_line_2.errors?.pattern" {{ inputValidators.addressLine.errorMessage }}></span>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_2.errors?.pattern">{{ inputValidators.addressLine.errorMessage }}</span>
             </span>
           </div>
           <div>
             <span class="p-float-label">
               <input id="address-line-3-input" type="text" pInputText formControlName="address_line_3" />
               <label for="address-line-3-input">Address Line 3</label>
-              <span class="text-xs text-red-500" *ngIf="f.address_line_3.errors?.pattern" {{ inputValidators.addressLine.errorMessage }}></span>
+              <span class="text-xs text-red-500" *ngIf="f.address_line_3.errors?.pattern">{{ inputValidators.addressLine.errorMessage }}</span>
             </span>
           </div>
           <div>
             <span class="p-float-label">
               <input id="city-input" type="text" pInputText formControlName="city" />
               <label for="city-input">City</label>
-              <span class="text-xs text-red-500" *ngIf="f.city.errors?.pattern" {{ inputValidators.placeName.errorMessage }}></span>
+              <span class="text-xs text-red-500" *ngIf="f.city.errors?.pattern">{{ inputValidators.placeName.errorMessage }}</span>
+              <span class="text-xs text-red-500" *ngIf="f.city.errors?.required">{{ inputValidators.required.errorMessage }}</span>
             </span>
           </div>
           <div>
             <span class="p-float-label">
               <input id="state-province-input" type="text" pInputText formControlName="state_province" />
               <label for="state-province-input">State/Province</label>
-              <span class="text-xs text-red-500" *ngIf="f.state_province.errors?.pattern" {{ inputValidators.placeName.errorMessage }}></span>
+              <span class="text-xs text-red-500" *ngIf="f.state_province.errors?.pattern">{{ inputValidators.placeName.errorMessage }}</span>
+              <span class="text-xs text-red-500" *ngIf="f.state_province.errors?.required">{{ inputValidators.required.errorMessage }}</span>
             </span>
           </div>
           <div>
             <span class="p-float-label">
               <input id="postal-code-input" type="text" pInputText formControlName="postal_code" />
               <label for="postal-code-input">Postal Code</label>
-              <span class="text-xs text-red-500" *ngIf="f.postal_code?.errors?.pattern" {{ inputValidators.alphaNumHyphen.errorMessage }}></span>
+              <span class="text-xs text-red-500" *ngIf="f.postal_code?.errors?.pattern">{{ inputValidators.alphaNumHyphen.errorMessage }}</span>
+              <span class="text-xs text-red-500" *ngIf="f.postal_code.errors?.required">{{ inputValidators.required.errorMessage }}</span>
             </span>
           </div>
           <div class="row-span-3">
             <vvu-country-selector formControlName="country"></vvu-country-selector>
+            <span class="text-xs text-red-500" *ngIf="f.country.errors?.required">{{ inputValidators.required.errorMessage }}</span>
           </div>
         </div>
       </div>
@@ -109,9 +119,11 @@
       <div class="grid grid-rows-8 gap-8">
         <div>
           <vvu-key-chips formControlName="key_products" keyType="Key Products"></vvu-key-chips>
+          <span class="text-xs text-red-500" *ngIf="f.key_products.errors?.required">{{ inputValidators.required.errorMessage }}</span>
         </div>
         <div>
           <vvu-key-chips formControlName="key_services" keyType="Key Services"></vvu-key-chips>
+          <span class="text-xs text-red-500" *ngIf="f.key_services.errors?.required">{{ inputValidators.required.errorMessage }}</span>
         </div>
         <div class="row-span-6 flex">
           <span class="p-float-label flex w-full">
@@ -119,6 +131,8 @@
             <label for="description-input">Description</label>
           </span>
         </div>
+        <span class="text-xs text-red-500" *ngIf="f.description.errors?.pattern">{{ inputValidators.textInput.errorMessage }}</span>
+        <span class="text-xs text-red-500" *ngIf="f.description.errors?.required">{{ inputValidators.required.errorMessage }}</span>
         <p-button
           (click)="onSubmit()"
           label="Submit"

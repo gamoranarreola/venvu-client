@@ -33,7 +33,7 @@ export class CompanyProfile {
       !isEmpty(this.country) &&
       !isEmpty(this.description) &&
       !isEmpty(this.employee_count_range) &&
-      !isEmpty(this.industry) &&
+      !isNaN(this.industry!) &&
       !isEmpty(this.key_products) &&
       !isEmpty(this.key_services) &&
       !isEmpty(this.name) &&

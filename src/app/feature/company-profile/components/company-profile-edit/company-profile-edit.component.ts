@@ -36,16 +36,18 @@ export class CompanyProfileEditComponent implements OnInit, OnDestroy, AfterCont
 
   onSubmit(): void {
 
-    this.apiService.patch(`${env.routes.companyProfiles}/${this.account?.company_profile?.id}`, this.companyProfileForm.value).subscribe(res => {
+    if ((this.companyProfileForm.valid)) {
+      this.apiService.patch(`${env.routes.companyProfiles}/${this.account?.company_profile?.id}`, this.companyProfileForm.value).subscribe(res => {
 
-      if (res.status === 200 && res.body.success === true) {
-        this.subscriptions.add(
-          this.accountStore.load().subscribe((data: Account) => {
-            this.account = data
-          })
-        )
-      }
-    })
+        if (res.status === 200 && res.body.success === true) {
+          this.subscriptions.add(
+            this.accountStore.load().subscribe((data: Account) => {
+              this.account = data
+            })
+          )
+        }
+      })
+    }
   }
 
   ngOnInit(): void {
@@ -73,35 +75,80 @@ export class CompanyProfileEditComponent implements OnInit, OnDestroy, AfterCont
         Validators.required,
         Validators.pattern(this.inputValidators.addressLine.pattern)
       ]),
-      address_line_2: new FormControl(this.account.company_profile?.address_line_2, Validators.required),
-      address_line_3: new FormControl(this.account.company_profile?.address_line_3, Validators.required),
+      address_line_2: new FormControl(
+        this.account.company_profile?.address_line_2,
+        Validators.pattern(this.inputValidators.addressLine.pattern)
+      ),
+      address_line_3: new FormControl(
+        this.account.company_profile?.address_line_3,
+        Validators.pattern(this.inputValidators.addressLine.pattern)
+      ),
       city: new FormControl(this.account.company_profile?.city, [
         Validators.required,
         Validators.pattern(this.inputValidators.placeName.pattern)
       ]),
-      company_type: new FormControl(this.account.company_profile?.company_type, Validators.required),
-      country: new FormControl(this.account.company_profile?.country, Validators.required),
-      description: new FormControl(this.account.company_profile?.description, Validators.pattern(this.inputValidators.textInput.pattern)),
-      employee_count_range: new FormControl(this.account.company_profile?.employee_count_range, Validators.required),
+      company_type: new FormControl(
+        this.account.company_profile?.company_type,
+        Validators.required
+      ),
+      country: new FormControl(
+        this.account.company_profile?.country,
+        Validators.required
+      ),
+      description: new FormControl(
+        this.account.company_profile?.description,
+        [
+          Validators.required,
+          Validators.pattern(this.inputValidators.textInput.pattern)
+        ]
+      ),
+      employee_count_range: new FormControl(
+        this.account.company_profile?.employee_count_range,
+        Validators.required
+      ),
       founded: new FormControl(this.account.company_profile?.founded),
-      industry: new FormControl(this.account.company_profile?.industry, Validators.required),
-      key_products: new FormControl(this.account.company_profile?.key_products, Validators.required),
-      key_services: new FormControl(this.account.company_profile?.key_services, Validators.required),
+      industry: new FormControl(
+        this.account.company_profile?.industry,
+        Validators.required
+      ),
+      key_products: new FormControl(
+        this.account.company_profile?.key_products,
+        Validators.required
+      ),
+      key_services: new FormControl(
+        this.account.company_profile?.key_services,
+        Validators.required
+      ),
       name: new FormControl(this.account.company_profile?.name, [
         Validators.required,
         Validators.pattern(this.inputValidators.orgName.pattern)
       ]),
-      parent_company: new FormControl(this.account.company_profile?.parent_company, Validators.pattern(this.inputValidators.textInput.pattern)),
-      postal_code: new FormControl(this.account.company_profile?.postal_code, [
-        Validators.required,
-        Validators.pattern(this.inputValidators.alphaNumHyphen.pattern)
-      ]),
-      state_province: new FormControl(this.account.company_profile?.state_province, [
-        Validators.required,
-        Validators.pattern(this.inputValidators.placeName.pattern)
-      ]),
-      website: new FormControl(this.account.company_profile?.website, Validators.pattern(this.inputValidators.webURL.pattern)),
-      yearly_revenue_range: new FormControl(this.account.company_profile?.yearly_revenue_range, Validators.required)
+      parent_company: new FormControl(
+        this.account.company_profile?.parent_company,
+        Validators.pattern(this.inputValidators.textInput.pattern)
+      ),
+      postal_code: new FormControl(
+        this.account.company_profile?.postal_code,
+        [
+          Validators.required,
+          Validators.pattern(this.inputValidators.alphaNumHyphen.pattern)
+        ]
+      ),
+      state_province: new FormControl(
+        this.account.company_profile?.state_province,
+        [
+          Validators.required,
+          Validators.pattern(this.inputValidators.placeName.pattern)
+        ]
+      ),
+      website: new FormControl(
+        this.account.company_profile?.website,
+        Validators.pattern(this.inputValidators.webURL.pattern)
+      ),
+      yearly_revenue_range: new FormControl(
+        this.account.company_profile?.yearly_revenue_range,
+        Validators.required
+      )
     })
   }
 
