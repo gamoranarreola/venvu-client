@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'vvu-not-verified',
   templateUrl: './not-verified.component.html',

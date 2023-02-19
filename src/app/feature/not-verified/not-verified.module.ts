@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NotVerifiedRoutingModule } from './not-verified-routing.module';
 import { NotVerifiedComponent } from './components/not-verified/not-verified.component';
+import { CardModule } from "primeng/card";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NotVerifiedComponent } from './components/not-verified/not-verified.com
   ],
   imports: [
     CommonModule,
-    NotVerifiedRoutingModule
+    NotVerifiedRoutingModule,
+    CardModule
   ]
 })
 export class NotVerifiedModule { }
