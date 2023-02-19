@@ -194,11 +194,25 @@ vvu-account-menu {
 }
 
 vvu-account-setup {
+  #header {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
   .p-steps .p-steps-item .p-menuitem-link {
     background: #fafafa;
   }
 
   .p-steps .p-steps-item:before {
     border-top: 1px solid #0030b7;
+  }
+}
+
+vvu-not-verified {
+  .p-card .p-card-subtitle {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #FE005A;
   }
 }
