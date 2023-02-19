@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SpinnerInterceptor } from './core/interceptors/spinner.interceptor';
 import { ToastModule } from 'primeng/toast';
+import { CardModule } from "primeng/card";
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ToastModule } from 'primeng/toast';
     CoreModule,
     SidebarModule,
     ProgressSpinnerModule,
-    ToastModule
+    ToastModule,
+    CardModule
   ],
   providers: [
     MessageService,
