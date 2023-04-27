@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { AccountSetupService } from '../../account-setup.service';
+import { AccountSetupService } from '../../../../core/services/account-setup.service';
 
 
 @Component({

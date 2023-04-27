@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { isEmpty } from 'lodash';
+import { Account } from '../models/account';
 
 
 @Injectable({
@@ -11,7 +13,6 @@ export class AccountSetupService {
   public accountSetup$: Observable<any> = this._accountSetup$.asObservable()
 
   constructor() {
-
     this._accountSetup$.next({
       account_type: '',
       allRoles: [],
@@ -22,7 +23,6 @@ export class AccountSetupService {
   }
 
   setState(partialState: any): void {
-
     this._accountSetup$.next(
       Object.assign(
         {},
@@ -31,4 +31,9 @@ export class AccountSetupService {
       )
     )
   }
+
+  getState(): any {
+    return this._accountSetup$.getValue()
+  }
+
 }

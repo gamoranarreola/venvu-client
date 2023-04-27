@@ -2,10 +2,12 @@ import { HttpResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription, switchMap } from 'rxjs';
+import { isEmpty } from 'lodash';
 
 import { Account } from 'src/app/core/models/account';
 import { RolesService } from 'src/app/core/services/roles.service';
 import { AccountStore } from 'src/app/core/state/stores/account.store';
+import { AccountSetupService } from 'src/app/core/services/account-setup.service';
 
 
 @Component({
@@ -28,11 +30,11 @@ export class NewUserRolesAndPermissionsComponent implements OnInit, OnDestroy {
   ) { }
 
   prev(): void {
-    this.router.navigate(['f/create-new-user/email'])
+    this.router.navigate(['f/new-user/email'])
   }
 
   next(): void {
-    this.router.navigate(['f/create-new-user/user-profile'])
+    this.router.navigate(['f/new-user/user-profile'])
   }
 
   ngOnInit(): void {

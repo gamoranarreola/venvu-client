@@ -11,7 +11,7 @@ import { WindowRefService } from 'src/app/core/services/window-ref.service';
 import { AccountStore } from 'src/app/core/state/stores/account.store';
 
 import { environment as env } from 'src/environments/environment';
-import { AccountSetupService } from '../../account-setup.service';
+import { AccountSetupService } from '../../../../core/services/account-setup.service';
 
 @Component({
   selector: 'vvu-company-verification',

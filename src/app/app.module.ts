@@ -40,7 +40,8 @@ import { ToastModule } from 'primeng/toast';
           `${env.apiHost}${env.routes.countries}`,
           `${env.apiHost}${env.routes.industries}`,
           `${env.apiHost}${env.routes.industries}/*`,
-          `${env.apiHost}${env.routes.roles}`
+          `${env.apiHost}${env.routes.roles}`,
+          `$${env.apiHost}${env.routes['sign-in']}}`
         ]
       }
     }),

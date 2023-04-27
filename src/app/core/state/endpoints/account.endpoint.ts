@@ -27,7 +27,7 @@ export class AccountEndpoint {
     return this.auth0Service.user$.pipe(
       distinctUntilChanged(),
       switchMap((user: any) => {
-        return this.ApiService.post(`${env.routes.accounts}`, {
+        return this.ApiService.post(`${env.routes['sign-in']}`, {
           email: user.email,
           sub: user.sub
         });

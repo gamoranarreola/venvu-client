@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AccountSetupService } from '../../account-setup.service';
+import { AccountSetupService } from '../../../../core/services/account-setup.service';
 import { environment as env } from 'src/environments/environment';
 import { Subscription } from 'rxjs';
 

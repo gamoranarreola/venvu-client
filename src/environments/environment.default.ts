@@ -57,14 +57,15 @@ export const environment = {
     }
   },
   routes: {
-    accounts: "api/accounts",
-    companyProfiles: "api/company-profiles",
-    companyTypes: "api/company-profiles/company-types",
-    employeeCountRanges: "api/company-profiles/employee-count-ranges",
-    yearlyRevenueRanges: "api/company-profiles/yearly-revenue-ranges",
-    countries: "api/company-profiles/countries",
-    industries: "api/company-profiles/industries",
-    roles: "api/user-management/roles"
+    accounts: "api/v1/accounts",
+    companyProfiles: "api/v1/company-profiles",
+    companyTypes: "api/cv1/ompany-profiles/company-types",
+    employeeCountRanges: "api/v1/company-profiles/employee-count-ranges",
+    yearlyRevenueRanges: "api/v1/company-profiles/yearly-revenue-ranges",
+    countries: "api/v1/company-profiles/countries",
+    industries: "api/v1/company-profiles/industries",
+    roles: "api/v1/user-management/roles",
+    "sign-in": "api/v1/sign-in"
   },
   google: {
     apiKeys: {

@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./account-setup/account-setup.module').then(m => m.AccountSetupModule)
   },
   {
-    path: 'create-new-user',
+    path: 'new-user',
     loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule)
   },
   {

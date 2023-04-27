@@ -25,7 +25,7 @@ export class VerticalNavService {
               {
                 label: 'Create New Users',
                 command: (event) => {
-                  this.router.navigate(['f/create-new-user']);
+                  this.router.navigate(['f/new-user']);
                 },
                 icon: 'pi pi-user-plus',
               },

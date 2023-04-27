@@ -3,8 +3,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Role } from 'src/app/core/models/role';
+import { AccountSetupService } from 'src/app/core/services/account-setup.service';
 import { RolesService } from 'src/app/core/services/roles.service';
-import { AccountSetupService } from 'src/app/feature/account-setup/account-setup.service';
 
 
 @Component({

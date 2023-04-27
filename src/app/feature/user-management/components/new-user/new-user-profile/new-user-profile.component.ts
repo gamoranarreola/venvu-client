@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { AccountSetupService } from 'src/app/feature/account-setup/account-setup.service';
+import { AccountSetupService } from 'src/app/core/services/account-setup.service';
 import { environment as env } from 'src/environments/environment';
 
 
@@ -29,11 +29,11 @@ export class NewUserProfileComponent implements OnInit, OnDestroy {
   }
 
   prev(): void {
-    this.router.navigate(['f/create-new-user/roles-and-permissions'])
+    this.router.navigate(['f/new-user/roles-and-permissions'])
   }
 
   next(): void {
-    this.router.navigate(['f/create-new-user/activate'])
+    this.router.navigate(['f/new-user/activate'])
   }
 
   get f(): {[key: string]: AbstractControl} {
@@ -41,6 +41,7 @@ export class NewUserProfileComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
     this.subscriptions.add(
       this.accountSetupService.accountSetup$.subscribe(data => this.accountSetup = data)
     )
